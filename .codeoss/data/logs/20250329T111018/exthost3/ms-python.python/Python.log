@@ -1,6 +1,0 @@
-2025-03-29 11:36:38.226 [warning] Dir "/home/sandyaa2004/.pixi/envs" is not watchable (directory does not exist)
-2025-03-29 11:36:38.226 [info] Python interpreter path: /bin/python
-2025-03-29 11:36:38.458 [info] > pyenv which python
-2025-03-29 11:36:38.459 [info] cwd: .
-2025-03-29 11:36:43.811 [info] Starting Jedi language server for sandyaa2004.
-2025-03-29 11:37:08.606 [info] Discover tests for workspace name: sandyaa2004 - uri: /home/sandyaa2004/retrieve_rag.py
