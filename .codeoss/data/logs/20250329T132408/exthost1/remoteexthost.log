@@ -1,0 +1,7 @@
+2025-03-29 13:24:17.040 [info] Extension host with pid 1214 started
+2025-03-29 13:24:17.041 [error] Error: EEXIST: file already exists, open '/home/sandyaa2004/.codeoss/data/User/workspaceStorage/62bec47d/vscode.lock'
+2025-03-29 13:24:17.056 [info] Lock '/home/sandyaa2004/.codeoss/data/User/workspaceStorage/62bec47d/vscode.lock': Could not acquire lock, checking if the file is stale.
+2025-03-29 13:24:17.062 [info] Lock '/home/sandyaa2004/.codeoss/data/User/workspaceStorage/62bec47d/vscode.lock': The pid 5819 appears to be gone.
+2025-03-29 13:24:17.062 [info] Lock '/home/sandyaa2004/.codeoss/data/User/workspaceStorage/62bec47d/vscode.lock': Deleting a stale lock.
+2025-03-29 13:24:17.067 [info] Lock '/home/sandyaa2004/.codeoss/data/User/workspaceStorage/62bec47d/vscode.lock': Lock acquired.
+2025-03-29 13:24:17.552 [info] Eager extensions activated

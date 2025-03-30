@@ -1,0 +1,71 @@
+import asyncio
+import vertexai
+from vertexai.preview import rag
+from vertexai.generative_models import GenerativeModel, Tool
+
+# ✅ Step 1: Set up Google Cloud Project
+PROJECT_ID = "my-rag-project-455210"  # Update with actual project ID
+LOCATION = "us-central1"  # Keep this for Vertex AI
+
+# ✅ Step 2: Initialize Vertex AI
+vertexai.init(project=PROJECT_ID, location=LOCATION)
+
+# ✅ Step 3: Create or Retrieve an Existing RAG Corpus
+display_name = "my_rag_corpus"
+
+# Check if corpus exists
+existing_corpora = rag.list_corpora()
+corpus = next((c for c in existing_corpora if c.display_name == display_name), None)
+
+if not corpus:
+    print(f"🚀 Creating a new RAG corpus: {display_name}...")
+
+    embedding_model_config = rag.RagEmbeddingModelConfig(
+        vertex_prediction_endpoint="publishers/google/models/text-embedding-005"
+    )
+
+    backend_config = rag.RagVectorDbConfig(rag_embedding_model_config=embedding_model_config)
+    corpus = rag.create_corpus(display_name=display_name, backend_config=backend_config)
+    print(f"✅ Corpus '{corpus.display_name}' created successfully.")
+else:
+    print(f"✅ Using existing corpus: {corpus.display_name}")
+
+# ✅ Step 4: Import Files from Google Cloud Storage (GCS)
+async def import_files():
+    corpus_name = corpus.name
+    paths = ["gs://rag-bucket-sandyaakevin-12345/ch1.pdf"]  # Update with GCS file
+
+    print("📂 Importing files into RAG Corpus...")
+    import_response = await rag.import_files_async(
+        corpus_name=corpus_name,
+        paths=paths,
+        max_embedding_requests_per_min=1000
+    )
+    print("✅ Files imported successfully.")
+
+# Run the async function
+asyncio.run(import_files())
+
+# ✅ Step 5: Retrieve Context from RAG (Fixed Retrieval)
+print("🔍 Running a RAG retrieval query...")
+
+retrieval = rag.Retrieval(
+    source=rag.VertexVectorSearch(
+        corpus_name=corpus.name,  # ✅ Use corpus_name instead of rag_resources
+        top_k=3  # Adjust top-k retrieval results
+    )
+)
+
+retrieval_response = retrieval.retrieve("What is RAG and why is it useful?")
+print("🤖 RAG Response:", retrieval_response)
+
+# ✅ Step 6: Use RAG-Enhanced Generation with Gemini Model
+print("🚀 Setting up RAG-Enhanced Generation...")
+rag_retrieval_tool = Tool.from_retrieval(retrieval=retrieval)
+
+rag_model = GenerativeModel(model_name="gemini-2.0-flash-001", tools=[rag_retrieval_tool])
+
+# Generate content using RAG-enhanced retrieval
+print("🧠 Generating content using RAG-enhanced AI...")
+gen_response = rag_model.generate_content("Explain Retrieval-Augmented Generation in simple terms.")
+print("📝 Generated Response:", gen_response.text)

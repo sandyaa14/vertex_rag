@@ -1,0 +1,14 @@
+2025-03-29 11:20:23.071 [warning] Dir "/home/sandyaa2004/.pixi/envs" is not watchable (directory does not exist)
+2025-03-29 11:20:23.253 [info] Starting Environment refresh
+2025-03-29 11:20:23.524 [info] > hatch env show --json
+2025-03-29 11:20:23.524 [info] cwd: .
+2025-03-29 11:20:23.547 [info] Python interpreter path: /bin/python
+2025-03-29 11:20:23.591 [info] > pyenv which python
+2025-03-29 11:20:23.591 [info] cwd: .
+2025-03-29 11:20:23.640 [info] > /bin/python -I /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/get_output_via_markers.py /google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/interpreterInfo.py
+2025-03-29 11:20:23.640 [info] Environments refresh paths discovered: 389 milliseconds
+2025-03-29 11:20:23.706 [info] Environments refresh finished (event): 455 milliseconds
+2025-03-29 11:20:23.709 [info] Environment refresh took 459 milliseconds
+2025-03-29 11:20:28.880 [info] Starting Jedi language server for sandyaa2004.
+2025-03-29 11:27:27.933 [info] Discover tests for workspace name: sandyaa2004 - uri: /home/sandyaa2004/import_files.py
+2025-03-29 11:29:49.457 [info] Discover tests for workspace name: sandyaa2004 - uri: /home/sandyaa2004/import_files.py

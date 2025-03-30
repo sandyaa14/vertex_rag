@@ -1,0 +1,86 @@
+import asyncio
+from google.cloud import vertex_ai as vertex
+from vertexai.preview import rag
+
+# Initialize the RAG client
+vertex_ai_client = vertex.gapic.PredictionServiceClient()
+
+# Define your corpus name
+corpus_name = "my_rag_corpus"  # Update this if needed
+
+# Make sure your GCS files are accessible and uploaded into a proper corpus
+async def import_files():
+    # Create or use the existing RAG corpus
+    print("✅ Using existing corpus:", corpus_name)
+
+    # Your GCS bucket files
+    gcs_uris = [
+        "gs://rag-bucket-sandyaakevin-12345/ch2.docx"
+    ]
+
+    print("📂 Importing files into RAG Corpus...")
+    
+    # Import files into RAG Corpus
+    rag_client = rag.RagClient()
+    files = []
+    
+    for uri in gcs_uris:
+        file = await rag_client.import_file(corpus_name, uri)
+        files.append(file)
+
+    print("✅ Files imported successfully.")
+    print("📂 Files in RAG Corpus:", files)
+    return files
+
+# Check if the documents are indexed correctly
+async def check_indexed_documents():
+    rag_client = rag.RagClient()
+    corpus = await rag_client.get_corpus(corpus_name)
+    
+    # Fetch the list of indexed files in the corpus
+    indexed_files = await rag_client.list_files(corpus.name)
+    
+    if indexed_files:
+        print("✅ Indexed Files in Corpus:")
+        for file in indexed_files:
+            print(f"  - {file.display_name} (URI: {file.gcs_source.uris})")
+    else:
+        print("❌ No files indexed. Please check the corpus.")
+    
+    return indexed_files
+
+# Perform a retrieval query on the indexed corpus
+async def run_retrieval_query():
+    rag_client = rag.RagClient()
+    
+    # Ensure documents are indexed properly
+    await check_indexed_documents()
+    
+    # Define the query for retrieving content
+    query_text = "Summarize the document ch1.pdf"
+    
+    # Run a retrieval query
+    print("🔍 Running RAG retrieval query...")
+    response = await rag_client.retrieve(
+        query=query_text,
+        corpus_name=corpus_name
+    )
+    
+    print("RAG Response:", response)
+    
+    if response:
+        print(f"Generated Response: {response.result}")
+    else:
+        print("❌ No relevant documents found for the query.")
+    
+# Main function to execute everything
+async def main():
+    # Import files into the corpus
+    files = await import_files()
+    
+    # Run the retrieval query
+    await run_retrieval_query()
+
+# Run the main function
+if __name__ == "__main__":
+    asyncio.run(main())

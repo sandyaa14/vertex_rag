@@ -1,0 +1,286 @@
+2025-03-29 17:41:40.436 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "11"
+
+2025-03-29 17:41:40.489 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "12"
+
+2025-03-29 17:42:47.617 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "57"
+
+2025-03-29 17:42:47.625 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "58"
+
+2025-03-29 17:42:47.627 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "59"
+
+2025-03-29 17:55:08.694 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "114"
+
+2025-03-29 17:56:24.450 [info] ERROR:pygls.protocol.json_rpc:Failed to handle request 125 textDocument/codeAction CodeActionParams(text_document=TextDocumentIdentifier(uri='untitled:Untitled-1'), range=0:0-11:30, context=CodeActionContext(diagnostics=[], only=None, trigger_kind=<CodeActionTriggerKind.Automatic: 2>), work_done_token=None, partial_result_token=None)
+Traceback (most recent call last):
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 266, in _handle_request
+    self._execute_request(msg_id, handler, params)
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 188, in _execute_request
+    self._send_response(msg_id, handler(params))
+                                ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/server.py", line 629, in code_action
+    extract_function_changes = text_edit_utils.lsp_document_changes(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 46, in lsp_document_changes
+    return [
+           ^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 78, in lsp_text_document_edits
+    text_edits = lsp_text_edits(document, changed_file)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 106, in lsp_text_edits
+    old_code = document.source
+               ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/workspace/text_document.py", line 181, in source
+    with io.open(self.path, "r", encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sandyaa2004/Untitled-1'
+
+2025-03-29 17:56:24.455 [info] [Error - 5:56:24 PM] Request textDocument/codeAction failed.
+2025-03-29 17:56:24.455 [info]   Message: FileNotFoundError: [Errno 2] No such file or directory: '/home/sandyaa2004/Untitled-1'
+  Code: -32603 
+[object Object]
+2025-03-29 17:56:25.121 [info] ERROR:pygls.protocol.json_rpc:Failed to handle request 126 textDocument/codeAction CodeActionParams(text_document=TextDocumentIdentifier(uri='untitled:Untitled-1'), range=0:0-60:0, context=CodeActionContext(diagnostics=[], only=None, trigger_kind=<CodeActionTriggerKind.Automatic: 2>), work_done_token=None, partial_result_token=None)
+Traceback (most recent call last):
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 266, in _handle_request
+    self._execute_request(msg_id, handler, params)
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 188, in _execute_request
+    self._send_response(msg_id, handler(params))
+                                ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/server.py", line 629, in code_action
+    extract_function_changes = text_edit_utils.lsp_document_changes(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 46, in lsp_document_changes
+    return [
+           ^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 78, in lsp_text_document_edits
+    text_edits = lsp_text_edits(document, changed_file)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 106, in lsp_text_edits
+    old_code = document.source
+               ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/workspace/text_document.py", line 181, in source
+    with io.open(self.path, "r", encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sandyaa2004/Untitled-1'
+
+2025-03-29 17:56:25.123 [info] [Error - 5:56:25 PM] Request textDocument/codeAction failed.
+2025-03-29 17:56:25.123 [info]   Message: FileNotFoundError: [Errno 2] No such file or directory: '/home/sandyaa2004/Untitled-1'
+  Code: -32603 
+[object Object]
+2025-03-29 17:56:27.924 [info] ERROR:pygls.protocol.json_rpc:Failed to handle request 127 textDocument/codeAction CodeActionParams(text_document=TextDocumentIdentifier(uri='untitled:Untitled-1'), range=0:0-60:0, context=CodeActionContext(diagnostics=[], only=None, trigger_kind=<CodeActionTriggerKind.Automatic: 2>), work_done_token=None, partial_result_token=None)
+Traceback (most recent call last):
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 266, in _handle_request
+    self._execute_request(msg_id, handler, params)
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 188, in _execute_request
+    self._send_response(msg_id, handler(params))
+                                ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/server.py", line 629, in code_action
+    extract_function_changes = text_edit_utils.lsp_document_changes(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 46, in lsp_document_changes
+    return [
+           ^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 78, in lsp_text_document_edits
+    text_edits = lsp_text_edits(document, changed_file)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 106, in lsp_text_edits
+    old_code = document.source
+               ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/workspace/text_document.py", line 181, in source
+    with io.open(self.path, "r", encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sandyaa2004/Untitled-1'
+
+2025-03-29 17:56:27.925 [info] [Error - 5:56:27 PM] Request textDocument/codeAction failed.
+2025-03-29 17:56:27.925 [info]   Message: FileNotFoundError: [Errno 2] No such file or directory: '/home/sandyaa2004/Untitled-1'
+  Code: -32603 
+[object Object]
+2025-03-29 17:59:10.693 [info] ERROR:pygls.protocol.json_rpc:Failed to handle request 148 textDocument/codeAction CodeActionParams(text_document=TextDocumentIdentifier(uri='untitled:Untitled-1'), range=50:0-50:0, context=CodeActionContext(diagnostics=[], only=None, trigger_kind=<CodeActionTriggerKind.Automatic: 2>), work_done_token=None, partial_result_token=None)
+Traceback (most recent call last):
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 266, in _handle_request
+    self._execute_request(msg_id, handler, params)
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 188, in _execute_request
+    self._send_response(msg_id, handler(params))
+                                ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/server.py", line 629, in code_action
+    extract_function_changes = text_edit_utils.lsp_document_changes(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 46, in lsp_document_changes
+    return [
+           ^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 78, in lsp_text_document_edits
+    text_edits = lsp_text_edits(document, changed_file)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 106, in lsp_text_edits
+    old_code = document.source
+               ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/workspace/text_document.py", line 181, in source
+    with io.open(self.path, "r", encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sandyaa2004/Untitled-1'
+
+2025-03-29 17:59:10.694 [info] [Error - 5:59:10 PM] Request textDocument/codeAction failed.
+2025-03-29 17:59:10.694 [info]   Message: FileNotFoundError: [Errno 2] No such file or directory: '/home/sandyaa2004/Untitled-1'
+  Code: -32603 
+[object Object]
+2025-03-29 17:59:20.401 [info] ERROR:pygls.protocol.json_rpc:Failed to handle request 151 textDocument/codeAction CodeActionParams(text_document=TextDocumentIdentifier(uri='untitled:Untitled-1'), range=54:0-54:0, context=CodeActionContext(diagnostics=[], only=None, trigger_kind=<CodeActionTriggerKind.Automatic: 2>), work_done_token=None, partial_result_token=None)
+Traceback (most recent call last):
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 266, in _handle_request
+    self._execute_request(msg_id, handler, params)
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 188, in _execute_request
+    self._send_response(msg_id, handler(params))
+                                ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/server.py", line 629, in code_action
+    extract_function_changes = text_edit_utils.lsp_document_changes(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 46, in lsp_document_changes
+    return [
+           ^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 78, in lsp_text_document_edits
+    text_edits = lsp_text_edits(document, changed_file)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 106, in lsp_text_edits
+    old_code = document.source
+               ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/workspace/text_document.py", line 181, in source
+    with io.open(self.path, "r", encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sandyaa2004/Untitled-1'
+
+2025-03-29 17:59:20.404 [info] [Error - 5:59:20 PM] Request textDocument/codeAction failed.
+2025-03-29 17:59:20.404 [info]   Message: FileNotFoundError: [Errno 2] No such file or directory: '/home/sandyaa2004/Untitled-1'
+  Code: -32603 
+[object Object]
+2025-03-29 17:59:33.834 [info] ERROR:pygls.protocol.json_rpc:Failed to handle request 153 textDocument/codeAction CodeActionParams(text_document=TextDocumentIdentifier(uri='untitled:Untitled-1'), range=0:0-59:0, context=CodeActionContext(diagnostics=[], only=None, trigger_kind=<CodeActionTriggerKind.Automatic: 2>), work_done_token=None, partial_result_token=None)
+Traceback (most recent call last):
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 266, in _handle_request
+    self._execute_request(msg_id, handler, params)
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 188, in _execute_request
+    self._send_response(msg_id, handler(params))
+                                ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/server.py", line 629, in code_action
+    extract_function_changes = text_edit_utils.lsp_document_changes(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 46, in lsp_document_changes
+    return [
+           ^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 78, in lsp_text_document_edits
+    text_edits = lsp_text_edits(document, changed_file)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/text_edit_utils.py", line 106, in lsp_text_edits
+    old_code = document.source
+               ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/workspace/text_document.py", line 181, in source
+    with io.open(self.path, "r", encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sandyaa2004/Untitled-1'
+
+2025-03-29 17:59:33.836 [info] [Error - 5:59:33 PM] Request textDocument/codeAction failed.
+2025-03-29 17:59:33.836 [info]   Message: FileNotFoundError: [Errno 2] No such file or directory: '/home/sandyaa2004/Untitled-1'
+  Code: -32603 
+[object Object]
+2025-03-29 17:59:42.921 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "161"
+
+2025-03-29 18:00:16.653 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "172"
+
+2025-03-29 18:00:19.643 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "174"
+WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "177"
+
+2025-03-29 18:00:19.649 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "176"
+
+2025-03-29 18:00:21.928 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "175"
+
+2025-03-29 18:00:21.948 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "179"
+
+2025-03-29 18:00:21.949 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "178"
+
+2025-03-29 18:00:21.952 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "180"
+
+2025-03-29 18:00:24.886 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "181"
+
+2025-03-29 18:00:24.905 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "186"
+
+2025-03-29 18:00:24.908 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "182"
+WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "183"
+
+2025-03-29 18:02:57.079 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "196"
+
+2025-03-29 18:02:57.099 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "197"
+
+2025-03-29 18:07:05.997 [info] ERROR:pygls.protocol.json_rpc:Failed to handle request 209 textDocument/codeAction CodeActionParams(text_document=TextDocumentIdentifier(uri='file:///home/sandyaa2004/retrieve_rag.py'), range=53:34-53:34, context=CodeActionContext(diagnostics=[], only=None, trigger_kind=<CodeActionTriggerKind.Automatic: 2>), work_done_token=None, partial_result_token=None)
+Traceback (most recent call last):
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 266, in _handle_request
+    self._execute_request(msg_id, handler, params)
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/pygls/protocol/json_rpc.py", line 188, in _execute_request
+    self._send_response(msg_id, handler(params))
+                                ^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi_language_server/server.py", line 599, in code_action
+    extract_variable_refactoring = jedi_script.extract_variable(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi/api/helpers.py", line 487, in wrapper
+    return func(self, line, column, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi/api/__init__.py", line 628, in extract_variable
+    return extract_variable(
+           ^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi/api/refactoring/extract.py", line 19, in extract_variable
+    nodes = _find_nodes(module_node, pos, until_pos)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi/api/refactoring/extract.py", line 87, in _find_nodes
+    nodes = _remove_unwanted_expression_nodes(parent_node, pos, until_pos)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi/api/refactoring/extract.py", line 199, in _remove_unwanted_expression_nodes
+    nodes[-1:] = _remove_unwanted_expression_nodes(nodes[-1], pos, until_pos)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/google/devshell/editor/code-oss-for-cloud-shell/extensions/ms-python.python/python_files/lib/jedilsp/jedi/api/refactoring/extract.py", line 196, in _remove_unwanted_expression_nodes
+    nodes = nodes[start_index:end_index + 1]
+                              ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'end_index' where it is not associated with a value
+
+2025-03-29 18:07:05.999 [info] [Error - 6:07:05 PM] Request textDocument/codeAction failed.
+2025-03-29 18:07:06.000 [info]   Message: UnboundLocalError: cannot access local variable 'end_index' where it is not associated with a value
+  Code: -32603 
+[object Object]
+2025-03-29 18:07:49.377 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "215"
+
+2025-03-29 18:08:04.657 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "218"
+
+2025-03-29 18:08:04.774 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "217"
+
+2025-03-29 18:08:04.793 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "220"
+
+2025-03-29 18:26:10.106 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "239"
+
+2025-03-29 18:28:15.520 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "242"
+
+2025-03-29 18:33:05.023 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "258"
+
+2025-03-29 18:33:05.043 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "259"
+
+2025-03-29 18:33:05.060 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "260"
+
+2025-03-29 18:33:05.079 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "261"
+
+2025-03-29 18:34:00.223 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "266"
+
+2025-03-29 18:34:00.252 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "267"
+
+2025-03-29 18:34:00.279 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "269"
+
+2025-03-29 18:35:40.969 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "381"
+
+2025-03-29 18:35:40.972 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "380"
+
+2025-03-29 18:35:40.976 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "383"
+
+2025-03-29 18:35:40.977 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "382"
+
+2025-03-29 18:35:40.984 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "384"
+
+2025-03-29 18:35:55.151 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "420"
+
+2025-03-29 18:43:56.222 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "544"
+
+2025-03-29 18:43:56.223 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "545"
+
+2025-03-29 18:43:56.237 [info] WARNING:pygls.protocol.json_rpc:Cancel notification for unknown message id "546"
+

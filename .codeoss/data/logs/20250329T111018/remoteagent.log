@@ -1,0 +1,22 @@
+2025-03-29 11:10:18.957 [info] 
+
+
+
+
+2025-03-29 11:10:18.974 [info] Extension host agent started.
+2025-03-29 11:10:18.996 [info] Started initializing default profile extensions in extensions installation folder. file:///home/sandyaa2004/.codeoss/extensions
+2025-03-29 11:10:19.012 [info] Completed initializing default profile extensions in extensions installation folder. file:///home/sandyaa2004/.codeoss/extensions
+2025-03-29 11:10:21.416 [info] [127.0.0.1][bd26f11f][ExtensionHostConnection] New connection established.
+2025-03-29 11:10:21.426 [info] [127.0.0.1][4aef494a][ManagementConnection] New connection established.
+2025-03-29 11:10:23.860 [info] [127.0.0.1][bd26f11f][ExtensionHostConnection] <2524> Launched Extension Host Process.
+2025-03-29 11:20:02.143 [info] [127.0.0.1][4aef494a][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-03-29 11:20:17.884 [info] [127.0.0.1][a46df83b][ManagementConnection] New connection established.
+2025-03-29 11:20:17.895 [info] [127.0.0.1][dc8214f6][ExtensionHostConnection] New connection established.
+2025-03-29 11:20:17.899 [info] [127.0.0.1][dc8214f6][ExtensionHostConnection] <3998> Launched Extension Host Process.
+2025-03-29 11:25:18.292 [info] [127.0.0.1][bd26f11f][ExtensionHostConnection] <2524> Extension Host Process exited with code: 0, signal: null.
+2025-03-29 11:36:04.166 [info] [127.0.0.1][a46df83b][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+2025-03-29 11:36:30.869 [info] [127.0.0.1][504bd7bf][ExtensionHostConnection] New connection established.
+2025-03-29 11:36:30.869 [info] [127.0.0.1][3e3725d9][ManagementConnection] New connection established.
+2025-03-29 11:36:30.874 [info] [127.0.0.1][504bd7bf][ExtensionHostConnection] <5819> Launched Extension Host Process.
+2025-03-29 11:41:31.274 [info] [127.0.0.1][dc8214f6][ExtensionHostConnection] <3998> Extension Host Process exited with code: 0, signal: null.
+2025-03-29 11:59:35.149 [info] [127.0.0.1][3e3725d9][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...

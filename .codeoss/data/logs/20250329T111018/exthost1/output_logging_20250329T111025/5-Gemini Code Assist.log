@@ -1,0 +1,522 @@
+language client is not ready, cannot initialize chat state
+I0329 11:10:46.785447    2615 serve.go:43] cloudcode_cli (Mar 16 2025 10:36:32 -0700, cl:737377283 baseline:736258458)
+I0329 11:10:46.785493    2615 serve.go:44] Command line: ["/home/sandyaa2004/.cache/cloud-code/cloudcode_cli/cloudcode_cli/a383010/cloudcode_cli" "duet" "-logtostderr"]
+I0329 11:10:46.787382    2615 life_cycle.go:169] Initializing. Architecture: "amd64", Operating system: "linux"
+I0329 11:10:46.919128    2615 configuration.go:184] product updateChannel will be used
+I0329 11:10:46.919187    2615 configuration.go:664] language thresholds: map[]
+I0329 11:10:46.919209    2615 configuration.go:611] dataFileExtensions array: [.csv .tsv .jsonl]
+I0329 11:10:46.919234    2615 configuration.go:875] atlas codeCompletion llm options: {MaxTokens:64 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc000e82a6d StopSequences:map[] DataFilePromptLines:0}
+I0329 11:10:46.919271    2615 configuration.go:875] atlas codeGeneration llm options: {MaxTokens:512 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc000e82a8d StopSequences:map[*:[[eod] [EOF] [pre] [suf] [mid]]] DataFilePromptLines:5}
+I0329 11:10:46.919394    2615 configuration.go:272] Configured settings for atlasOpts: {"Addr":"","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"EnablePromptEnhancementForTransform":false,"EnablePromptEnhancementForChat":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false,"Complete":{"MaxTokens":64,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":null,"DataFilePromptLines":0},"Generate":{"MaxTokens":512,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":{"*":["[eod]","[EOF]","[pre]","[suf]","[mid]"]},"DataFilePromptLines":5},"DataFileExtensions":[".csv",".tsv",".jsonl"]}
+I0329 11:10:46.919437    2615 configuration.go:280] Configured settings for cloudCodeOpts: {"Addr":"cloudcode-pa.googleapis.com:443","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"EnablePromptEnhancementForTransform":false,"EnablePromptEnhancementForChat":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false}
+I0329 11:10:46.919450    2615 configuration.go:284] Configured settings for opts: &{trace:false atlasAddr:cloudaicompanion.googleapis.com:443 cloudCodeAddr:cloudcode-pa.googleapis.com:443 cloudCodeQuotaProject: autoGen:false invokeGen:true codeCacheMaxEntries:1024 completionOpts:{debounce:300000000 throttle:100000000 debouncedAfterFetching:false minScoreThreshold:-6 languageThresholds:map[] enableThresholds:true commentCompletion:false citationLengthThreshold:-1 enableRecitations:true citationLogFilePath: repeatedStringFilterThreshold:60 otherFilesGenerationLimit:20 otherFilesGenerationSizeLimit:-1 otherFilesCompletionLimit:0 multiQueryTailNSForCompletion:[] multiQueryTailNSForGeneration:[]} contextExclusionFile:.aiexclude chatOpts:{contextOrdering:fsu maxFileBytes:75000 maxHistoryBytes:500000 escapeContext:false otherFilesLimit:20 otherFilesSizeLimit:-1 userSelectedFilesSizeLimit:-1} useRest:<nil> useCloudCodeAPI:true enableChatStreaming:false enableNotebooks:false enableRAGL:false enableRAGLCompletion:false enableRAGLChat:false ragLRerankByLangBoost:0 raglCoLocated:20 raglTotalFiles:250 raglFileLimit:524288 raglIncludeDocFiles:false raglIncludeUnitTestFile:false raglMaxFileSearchDepth:1 substringsToIdentifyTestPrompts:[test] substringsToIdentifyDocPrompts:[document comment] raglTopKTestFilesToInclude:0 raglTopKDocFilesToInclude:0 raglTokenizationAlgorithm:whitespace}
+I0329 11:10:46.919491    2615 configuration.go:286] Configured settings for canCancelRequests: true
+I0329 11:10:46.919502    2615 configuration.go:288] Configured settings for contextPromptOpts: &{Endpoint:}
+I0329 11:10:46.984449    2615 experiments.go:124] Applied experiment flag "Chat__enable_chat_streaming" to chat.enableChatStreaming with value true
+I0329 11:10:46.984513    2615 experiments.go:168] Applied experiment flag "DuetAiLocalRag__enable_local_rag_chat" to enableRAGLChat with value true
+I0329 11:10:46.984542    2615 experiments.go:140] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounced_after_fetching" to completionOpts.debouncedAfterFetching with value false
+I0329 11:10:46.984562    2615 experiments.go:149] Applied experiment flag "DuetAICodeTransform__display_prompt_recitations" to cloudCodeOpts.EnablePromptEnhancementForTransform with value true
+I0329 11:10:46.984577    2615 experiments.go:164] Applied experiment flag "DuetAiLocalRag__enable_local_rag" to enableRAGL with value true
+I0329 11:10:46.984596    2615 experiments.go:212] Applied experiment flag "DuetAiLocalRag__include_unit_test_files" to includeUnitTestFile with value false
+I0329 11:10:46.984617    2615 experiments.go:157] Applied experiment flag "GcaCitationBlock__enable_citation_block" to cloudCodeOpts.EnableAdminCitationBlock with value false
+I0329 11:10:46.984634    2615 experiments.go:153] Applied experiment flag "Chat__display_prompt_recitations" to cloudCodeOpts.EnablePromptEnhancementForChat with value true
+I0329 11:10:46.984657    2615 experiments.go:172] Applied experiment flag "DuetAiLocalRag__enable_local_rag_completion" to enableRAGLCompletion with value true
+I0329 11:10:46.984680    2615 experiments.go:208] Applied experiment flag "DuetAiLocalRag__include_doc_files" to includeDocFiles with value false
+I0329 11:10:46.984693    2615 experiments.go:128] Applied experiment flag "DuetAiCloudCodeAPI__enable_cloudcode_api" to useCloudCodeAPI with value true
+I0329 11:10:46.984719    2615 experiments.go:240] Applied experiment flag "DuetAiLocalRag__local_rag_tokenization_algorithm" to localRagTokenizationAlgorithm with value 
+I0329 11:10:46.984734    2615 experiments.go:116] Applied experiment flag "Chat__chat_context_window_size" to chat.contextWindowSize with value -1
+I0329 11:10:46.984756    2615 experiments.go:216] Applied experiment flag "DuetAiLocalRag__max_file_search_depth" to maxFileSearchDepth with value 2
+I0329 11:10:46.984773    2615 experiments.go:192] Applied experiment flag "DuetAiLocalRag__otherfiles_completion_limit" to otherFilesCompletionLimit with value 15
+I0329 11:10:46.984789    2615 experiments.go:196] Applied experiment flag "DuetAiLocalRag__otherfiles_chat_limit" to otherFilesChatLimit with value 20
+I0329 11:10:46.984802    2615 experiments.go:176] Applied experiment flag "DuetAiLocalRag__otherfiles_generation_limit" to otherFilesGenerationLimit with value 40
+I0329 11:10:46.984824    2615 experiments.go:136] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounceMs" to completionOpts.debounce with value 300
+I0329 11:10:46.984845    2615 experiments.go:120] Applied experiment flag "Chat__fca_chat_context_window_size" to chat.fcaContextWindowSize with value 450000
+I0329 11:10:46.984859    2615 experiments.go:112] Applied experiment flag "DuetAiGeneration__codeGeneration_context_window_size" to otherFilesGenerationSizeLimit with value 64000
+I0329 11:10:46.984880    2615 experiments.go:228] Applied experiment flag "DuetAiLocalRag__top_k_doc_files_to_include" to topKDocFilesToInclude with value 2
+I0329 11:10:46.984900    2615 experiments.go:232] Applied experiment flag "DuetAiLocalRag__top_k_test_files_to_include" to topKTestFilesToInclude with value 2
+I0329 11:10:46.984921    2615 experiments.go:180] Applied experiment flag "DuetAiLocalRag__cache_co_located" to coLocated with value 20
+I0329 11:10:46.984935    2615 experiments.go:184] Applied experiment flag "DuetAiLocalRag__cache_file_limit" to fileLimit with value 4.1943e+06
+I0329 11:10:46.984949    2615 experiments.go:188] Applied experiment flag "DuetAiLocalRag__cache_total_files" to totalFiles with value 250
+I0329 11:10:46.984980    2615 experiments.go:236] Applied experiment flag "DuetAiLocalRag__local_rag_reranking_by_language" to localRAGRerankingByLanguageParam with value 0
+I0329 11:10:46.984994    2615 experiments.go:132] Applied experiment flag "DuetAiMendelOverrides__codeCompletion_defaultThreshold" to completionOpts.minScoreTheshold with value -100
+I0329 11:10:46.985017    2615 experiments.go:200] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_completion" to multiQueryTailNS with value []
+I0329 11:10:46.985037    2615 experiments.go:204] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_generation" to multiQueryTailNS with value []
+I0329 11:10:46.985056    2615 experiments.go:220] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_doc_prompts" to substringsToIdentifyDocPrompts with value [document comment]
+I0329 11:10:46.985081    2615 experiments.go:224] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_test_prompts" to substringsToIdentifyTestPrompts with value [test]
+I0329 11:10:46.985131    2615 configuration.go:479] Repopulating context cache from document cache
+I0329 11:10:46.985239    2615 tier.go:16] Received tier configuration request: {ProjectID:cloudshell-gca UserDefinedCloudaicompanionProject:true}
+I0329 11:10:46.999177    2615 configuration.go:184] product updateChannel will be used
+I0329 11:10:46.999251    2615 configuration.go:664] language thresholds: map[]
+I0329 11:10:46.999273    2615 configuration.go:611] dataFileExtensions array: [.csv .tsv .jsonl]
+I0329 11:10:46.999321    2615 configuration.go:875] atlas codeCompletion llm options: {MaxTokens:64 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc000e83c5d StopSequences:map[] DataFilePromptLines:0}
+I0329 11:10:46.999355    2615 configuration.go:875] atlas codeGeneration llm options: {MaxTokens:512 Temp:0.2 Samples:4 EnablePrompt:<nil> PromptOverride: PostProcess:0xc000e83c7d StopSequences:map[*:[[eod] [EOF] [pre] [suf] [mid]]] DataFilePromptLines:5}
+I0329 11:10:46.999413    2615 configuration.go:272] Configured settings for atlasOpts: {"Addr":"","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"EnablePromptEnhancementForTransform":false,"EnablePromptEnhancementForChat":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false,"Complete":{"MaxTokens":64,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":null,"DataFilePromptLines":0},"Generate":{"MaxTokens":512,"Temp":0.2,"Samples":4,"EnablePrompt":null,"PromptOverride":"","PostProcess":true,"StopSequences":{"*":["[eod]","[EOF]","[pre]","[suf]","[mid]"]},"DataFilePromptLines":5},"DataFileExtensions":[".csv",".tsv",".jsonl"]}
+I0329 11:10:46.999432    2615 configuration.go:280] Configured settings for cloudCodeOpts: {"Addr":"cloudcode-pa.googleapis.com:443","QuotaProject":"","Project":"cloudshell-gca","LogPrompt":true,"UseTypeoverCache":true,"EnablePromptEnhancementForTransform":false,"EnablePromptEnhancementForChat":false,"EnableAdminCitationBlock":false,"EnableChatStreaming":false}
+I0329 11:10:46.999457    2615 configuration.go:284] Configured settings for opts: &{trace:false atlasAddr:cloudaicompanion.googleapis.com:443 cloudCodeAddr:cloudcode-pa.googleapis.com:443 cloudCodeQuotaProject: autoGen:false invokeGen:true codeCacheMaxEntries:1024 completionOpts:{debounce:300000000 throttle:100000000 debouncedAfterFetching:false minScoreThreshold:-6 languageThresholds:map[] enableThresholds:true commentCompletion:false citationLengthThreshold:-1 enableRecitations:true citationLogFilePath: repeatedStringFilterThreshold:60 otherFilesGenerationLimit:20 otherFilesGenerationSizeLimit:-1 otherFilesCompletionLimit:0 multiQueryTailNSForCompletion:[] multiQueryTailNSForGeneration:[]} contextExclusionFile:.aiexclude chatOpts:{contextOrdering:fsu maxFileBytes:75000 maxHistoryBytes:500000 escapeContext:false otherFilesLimit:20 otherFilesSizeLimit:-1 userSelectedFilesSizeLimit:-1} useRest:<nil> useCloudCodeAPI:true enableChatStreaming:true enableNotebooks:false enableRAGL:false enableRAGLCompletion:false enableRAGLChat:false ragLRerankByLangBoost:0 raglCoLocated:20 raglTotalFiles:250 raglFileLimit:524288 raglIncludeDocFiles:false raglIncludeUnitTestFile:false raglMaxFileSearchDepth:1 substringsToIdentifyTestPrompts:[test] substringsToIdentifyDocPrompts:[document comment] raglTopKTestFilesToInclude:0 raglTopKDocFilesToInclude:0 raglTokenizationAlgorithm:whitespace}
+I0329 11:10:46.999492    2615 configuration.go:286] Configured settings for canCancelRequests: true
+I0329 11:10:46.999503    2615 configuration.go:288] Configured settings for contextPromptOpts: &{Endpoint:}
+I0329 11:10:47.006756    2615 experiments.go:124] Applied experiment flag "Chat__enable_chat_streaming" to chat.enableChatStreaming with value true
+I0329 11:10:47.006925    2615 experiments.go:208] Applied experiment flag "DuetAiLocalRag__include_doc_files" to includeDocFiles with value false
+I0329 11:10:47.006953    2615 experiments.go:153] Applied experiment flag "Chat__display_prompt_recitations" to cloudCodeOpts.EnablePromptEnhancementForChat with value true
+I0329 11:10:47.007116    2615 experiments.go:140] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounced_after_fetching" to completionOpts.debouncedAfterFetching with value false
+I0329 11:10:47.007148    2615 experiments.go:149] Applied experiment flag "DuetAICodeTransform__display_prompt_recitations" to cloudCodeOpts.EnablePromptEnhancementForTransform with value true
+I0329 11:10:47.008174    2615 experiments.go:128] Applied experiment flag "DuetAiCloudCodeAPI__enable_cloudcode_api" to useCloudCodeAPI with value true
+I0329 11:10:47.008203    2615 experiments.go:164] Applied experiment flag "DuetAiLocalRag__enable_local_rag" to enableRAGL with value true
+I0329 11:10:47.008215    2615 experiments.go:168] Applied experiment flag "DuetAiLocalRag__enable_local_rag_chat" to enableRAGLChat with value true
+I0329 11:10:47.008234    2615 experiments.go:172] Applied experiment flag "DuetAiLocalRag__enable_local_rag_completion" to enableRAGLCompletion with value true
+I0329 11:10:47.008258    2615 experiments.go:212] Applied experiment flag "DuetAiLocalRag__include_unit_test_files" to includeUnitTestFile with value false
+I0329 11:10:47.008274    2615 experiments.go:157] Applied experiment flag "GcaCitationBlock__enable_citation_block" to cloudCodeOpts.EnableAdminCitationBlock with value false
+I0329 11:10:47.008296    2615 experiments.go:240] Applied experiment flag "DuetAiLocalRag__local_rag_tokenization_algorithm" to localRagTokenizationAlgorithm with value 
+I0329 11:10:47.008309    2615 experiments.go:176] Applied experiment flag "DuetAiLocalRag__otherfiles_generation_limit" to otherFilesGenerationLimit with value 40
+I0329 11:10:47.008378    2615 experiments.go:232] Applied experiment flag "DuetAiLocalRag__top_k_test_files_to_include" to topKTestFilesToInclude with value 2
+I0329 11:10:47.008402    2615 experiments.go:216] Applied experiment flag "DuetAiLocalRag__max_file_search_depth" to maxFileSearchDepth with value 2
+I0329 11:10:47.008419    2615 experiments.go:192] Applied experiment flag "DuetAiLocalRag__otherfiles_completion_limit" to otherFilesCompletionLimit with value 15
+I0329 11:10:47.008435    2615 experiments.go:136] Applied experiment flag "DuetAiMendelOverrides__inlineSuggestions_debounceMs" to completionOpts.debounce with value 300
+I0329 11:10:47.008452    2615 experiments.go:116] Applied experiment flag "Chat__chat_context_window_size" to chat.contextWindowSize with value -1
+I0329 11:10:47.008466    2615 experiments.go:120] Applied experiment flag "Chat__fca_chat_context_window_size" to chat.fcaContextWindowSize with value 450000
+I0329 11:10:47.008483    2615 experiments.go:196] Applied experiment flag "DuetAiLocalRag__otherfiles_chat_limit" to otherFilesChatLimit with value 20
+I0329 11:10:47.008503    2615 experiments.go:228] Applied experiment flag "DuetAiLocalRag__top_k_doc_files_to_include" to topKDocFilesToInclude with value 2
+I0329 11:10:47.008518    2615 experiments.go:112] Applied experiment flag "DuetAiGeneration__codeGeneration_context_window_size" to otherFilesGenerationSizeLimit with value 64000
+I0329 11:10:47.008532    2615 experiments.go:180] Applied experiment flag "DuetAiLocalRag__cache_co_located" to coLocated with value 20
+I0329 11:10:47.008547    2615 experiments.go:184] Applied experiment flag "DuetAiLocalRag__cache_file_limit" to fileLimit with value 4.1943e+06
+I0329 11:10:47.008562    2615 experiments.go:188] Applied experiment flag "DuetAiLocalRag__cache_total_files" to totalFiles with value 250
+I0329 11:10:47.008585    2615 experiments.go:236] Applied experiment flag "DuetAiLocalRag__local_rag_reranking_by_language" to localRAGRerankingByLanguageParam with value 0
+I0329 11:10:47.008600    2615 experiments.go:132] Applied experiment flag "DuetAiMendelOverrides__codeCompletion_defaultThreshold" to completionOpts.minScoreTheshold with value -100
+I0329 11:10:47.008622    2615 experiments.go:200] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_completion" to multiQueryTailNS with value []
+I0329 11:10:47.008643    2615 experiments.go:204] Extracted experiment flag "DuetAiRemoteRag__multi_query_tail_ns_for_generation" to multiQueryTailNS with value []
+I0329 11:10:47.008664    2615 experiments.go:220] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_doc_prompts" to substringsToIdentifyDocPrompts with value [document comment]
+I0329 11:10:47.008689    2615 experiments.go:224] Applied experiment flag "DuetAiLocalRag__substrings_to_identify_test_prompts" to substringsToIdentifyTestPrompts with value [test]
+I0329 11:10:47.008724    2615 configuration.go:479] Repopulating context cache from document cache
+I0329 11:10:47.010630    2615 cloudcode.go:45] Using Cloud Code API
+I0329 11:10:47.016241    2615 client.go:432] CompleteCode request: {"enablePromptEnhancement":true,"ideContext":{"currentFile":{"segments":[{"content":"Code Assist healthcheck id: d1956a9b-871f-4e3a-a9a9-9d4dfe17d0cc\nPi = "},{"isSelected":true},{}]}},"metadata":{"ideName":"Code OSS for Cloud Shell","ideType":"CLOUD_SHELL","ideVersion":"1.94.2-cde","platform":"LINUX_AMD64","pluginType":"CLOUD_CODE","pluginVersion":"2.29.0"},"project":"cloudshell-gca","requestId":"cloudcode-737377283-af21c55f-83a4-4aca-92af-033f63e0cfb4"}
+W0329 11:14:00.458684    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:00.458731    2615 rag_cache.go:715] Tokenization failed for URI file:///home/sandyaa2004/rag_setup.py: tokenizeFunc returned no words
+W0329 11:14:00.460122    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:00.460698    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+I0329 11:14:00.596720    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:00.596764    2615 document.go:421] NoneEditType, returning ReasonRecentlyOpened
+I0329 11:14:00.596814    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:00.596829    2615 conversation.go:896] Unable to retrieve excluded files for request #6: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:00.596904    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:00.596915    2615 rag_cache.go:1008] rerankByLangBoost=0
+W0329 11:14:15.348273    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+I0329 11:14:15.448251    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:15.448293    2615 document.go:425] OtherEditType (UNKNOWN_EDIT), returning ReasonRecentlyEdited
+I0329 11:14:15.448337    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:15.448351    2615 conversation.go:896] Unable to retrieve excluded files for request #9: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:15.448380    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:15.448388    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:26.794234    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:26.794274    2615 document.go:425] OtherEditType (UNKNOWN_EDIT), returning ReasonRecentlyEdited
+I0329 11:14:26.794317    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:26.794330    2615 conversation.go:896] Unable to retrieve excluded files for request #13: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:26.794359    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:26.794368    2615 rag_cache.go:1008] rerankByLangBoost=0
+W0329 11:14:28.672776    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 0 - New completion requested from language client at position {"line":4,"character":28}, triggerKind=1
+I0329 11:14:28.717185    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:28.772903    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:28.772947    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:28.772980    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:28.772989    2615 conversation.go:896] Unable to retrieve excluded files for request #17: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:28.773016    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:28.773026    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:28.870658    2615 handler.go:159] cancel was requested for: 16, needs to be canceled: true
+W0329 11:14:28.871132    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 1 - New completion requested from language client at position {"line":4,"character":27}, triggerKind=1
+I0329 11:14:28.909795    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:28.966047    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:28.966086    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:28.966146    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:28.966160    2615 conversation.go:896] Unable to retrieve excluded files for request #20: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:28.966189    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:28.966197    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:29.020161    2615 handler.go:159] cancel was requested for: 19, needs to be canceled: true
+W0329 11:14:29.020692    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 2 - New completion requested from language client at position {"line":4,"character":26}, triggerKind=1
+I0329 11:14:29.057159    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:29.116222    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:29.116262    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:29.116315    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:29.116333    2615 conversation.go:896] Unable to retrieve excluded files for request #23: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:29.116361    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:29.116370    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:29.359338    2615 completion.go:236] Inline suggestion requested (request #22): {TextDocumentPositionParams:{TextDocument:{URI:file:///home/sandyaa2004/rag_setup.py} Position:{Line:4 Character:26}} TriggerMode:0 IDESessionIndex:20250329_1 CompletionIndex:2}
+Completion Provider - completion # 2 - Completion result obtained from language client
+W0329 11:14:29.522142    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:29.554678    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:29.582228    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:29.616323    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:29.646324    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:29.672296    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:29.699025    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 3 - New completion requested from language client at position {"line":4,"character":19}, triggerKind=1
+I0329 11:14:29.742372    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:29.800059    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:29.800121    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:29.800164    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:29.800178    2615 conversation.go:896] Unable to retrieve excluded files for request #33: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:29.800207    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:29.800217    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:29.871975    2615 handler.go:159] cancel was requested for: 32, needs to be canceled: true
+W0329 11:14:29.872373    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 4 - New completion requested from language client at position {"line":4,"character":18}, triggerKind=1
+I0329 11:14:29.907434    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:29.967491    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:29.967532    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:29.967576    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:29.967595    2615 conversation.go:896] Unable to retrieve excluded files for request #36: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:29.967623    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:29.967632    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:30.057500    2615 handler.go:159] cancel was requested for: 35, needs to be canceled: true
+W0329 11:14:30.057894    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 5 - New completion requested from language client at position {"line":4,"character":17}, triggerKind=1
+I0329 11:14:30.091990    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:30.155270    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:30.155314    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:30.155361    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:30.155375    2615 conversation.go:896] Unable to retrieve excluded files for request #39: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:30.155405    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:30.155415    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:30.237548    2615 handler.go:159] cancel was requested for: 38, needs to be canceled: true
+W0329 11:14:30.238170    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 6 - New completion requested from language client at position {"line":4,"character":16}, triggerKind=1
+I0329 11:14:30.268048    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:30.336927    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:30.336978    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:30.337022    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:30.337046    2615 conversation.go:896] Unable to retrieve excluded files for request #42: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:30.337074    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:30.337083    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:30.387187    2615 handler.go:159] cancel was requested for: 41, needs to be canceled: true
+W0329 11:14:30.387664    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 7 - New completion requested from language client at position {"line":4,"character":15}, triggerKind=1
+I0329 11:14:30.421503    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:30.484877    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:30.484925    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:30.484968    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:30.484982    2615 conversation.go:896] Unable to retrieve excluded files for request #45: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:30.485018    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:30.485028    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:30.532644    2615 handler.go:159] cancel was requested for: 44, needs to be canceled: true
+W0329 11:14:30.533061    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 8 - New completion requested from language client at position {"line":4,"character":14}, triggerKind=1
+I0329 11:14:30.569276    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:30.630795    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:30.630837    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:30.630876    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:30.630890    2615 conversation.go:896] Unable to retrieve excluded files for request #48: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:30.630918    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:30.630929    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:30.870634    2615 completion.go:236] Inline suggestion requested (request #47): {TextDocumentPositionParams:{TextDocument:{URI:file:///home/sandyaa2004/rag_setup.py} Position:{Line:4 Character:14}} TriggerMode:0 IDESessionIndex:20250329_1 CompletionIndex:8}
+Completion Provider - completion # 8 - Completion result obtained from language client
+W0329 11:14:40.984892    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+I0329 11:14:41.084628    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:41.084666    2615 document.go:425] OtherEditType (UNKNOWN_EDIT), returning ReasonRecentlyEdited
+I0329 11:14:41.084709    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:41.084722    2615 conversation.go:896] Unable to retrieve excluded files for request #55: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:41.084750    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:41.084769    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:44.538613    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:44.538652    2615 document.go:425] OtherEditType (UNKNOWN_EDIT), returning ReasonRecentlyEdited
+I0329 11:14:44.538696    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:44.538708    2615 conversation.go:896] Unable to retrieve excluded files for request #59: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:44.538736    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:44.538746    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:46.920846    2615 life_cycle.go:300] codeReportEvery: recomputing codereport metric
+I0329 11:14:49.380129    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:49.380171    2615 document.go:425] OtherEditType (UNKNOWN_EDIT), returning ReasonRecentlyEdited
+I0329 11:14:49.380215    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:49.380229    2615 conversation.go:896] Unable to retrieve excluded files for request #62: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:49.380307    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:49.380317    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:53.682725    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:53.682769    2615 document.go:425] OtherEditType (UNKNOWN_EDIT), returning ReasonRecentlyEdited
+I0329 11:14:53.682814    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:53.682827    2615 conversation.go:896] Unable to retrieve excluded files for request #66: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:53.682856    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:53.682865    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:55.340820    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:55.340860    2615 document.go:425] OtherEditType (UNKNOWN_EDIT), returning ReasonRecentlyEdited
+I0329 11:14:55.340901    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:55.340914    2615 conversation.go:896] Unable to retrieve excluded files for request #68: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:55.340941    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:55.340950    2615 rag_cache.go:1008] rerankByLangBoost=0
+W0329 11:14:55.865724    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 9 - New completion requested from language client at position {"line":4,"character":67}, triggerKind=1
+I0329 11:14:55.906052    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:55.965208    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:55.965251    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:55.965291    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:55.965304    2615 conversation.go:896] Unable to retrieve excluded files for request #72: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:55.965336    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:55.965345    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:56.088886    2615 handler.go:159] cancel was requested for: 71, needs to be canceled: true
+W0329 11:14:56.089359    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 10 - New completion requested from language client at position {"line":4,"character":66}, triggerKind=1
+I0329 11:14:56.132061    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:56.183335    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:56.183376    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:56.183419    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:56.183433    2615 conversation.go:896] Unable to retrieve excluded files for request #75: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:56.183462    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:56.183470    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:56.251725    2615 handler.go:159] cancel was requested for: 74, needs to be canceled: true
+W0329 11:14:56.252246    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 11 - New completion requested from language client at position {"line":4,"character":65}, triggerKind=1
+I0329 11:14:56.287704    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:56.349323    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:56.349367    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:56.349412    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:56.349424    2615 conversation.go:896] Unable to retrieve excluded files for request #78: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:56.349462    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:56.349472    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:56.420323    2615 handler.go:159] cancel was requested for: 77, needs to be canceled: true
+W0329 11:14:56.421858    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 12 - New completion requested from language client at position {"line":4,"character":64}, triggerKind=1
+I0329 11:14:56.451206    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:56.516414    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:56.516455    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:56.516500    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:56.516514    2615 conversation.go:896] Unable to retrieve excluded files for request #81: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:56.516589    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:56.516601    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:56.751675    2615 completion.go:236] Inline suggestion requested (request #80): {TextDocumentPositionParams:{TextDocument:{URI:file:///home/sandyaa2004/rag_setup.py} Position:{Line:4 Character:64}} TriggerMode:0 IDESessionIndex:20250329_1 CompletionIndex:12}
+Completion Provider - completion # 12 - Completion result obtained from language client
+W0329 11:14:56.910254    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:56.946634    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:56.979361    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:57.011038    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:57.030076    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 13 - New completion requested from language client at position {"line":4,"character":59}, triggerKind=1
+I0329 11:14:57.076149    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:57.130966    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:57.131005    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:57.131053    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:57.131067    2615 conversation.go:896] Unable to retrieve excluded files for request #89: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:57.131093    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:57.131131    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:57.232682    2615 handler.go:159] cancel was requested for: 88, needs to be canceled: true
+W0329 11:14:57.232871    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 14 - New completion requested from language client at position {"line":4,"character":58}, triggerKind=1
+I0329 11:14:57.278346    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:57.329665    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:57.329706    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:57.329751    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:57.329764    2615 conversation.go:896] Unable to retrieve excluded files for request #92: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:57.329810    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:57.329822    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:57.431768    2615 handler.go:159] cancel was requested for: 91, needs to be canceled: true
+W0329 11:14:57.432401    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 15 - New completion requested from language client at position {"line":4,"character":57}, triggerKind=1
+I0329 11:14:57.468345    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:57.529130    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:57.529174    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:57.529217    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:57.529231    2615 conversation.go:896] Unable to retrieve excluded files for request #95: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:57.529259    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:57.529268    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:57.597333    2615 handler.go:159] cancel was requested for: 94, needs to be canceled: true
+W0329 11:14:57.597808    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 16 - New completion requested from language client at position {"line":4,"character":56}, triggerKind=1
+I0329 11:14:57.629598    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:57.695669    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:57.695711    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:57.695747    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:57.695756    2615 conversation.go:896] Unable to retrieve excluded files for request #98: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:57.695784    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:57.695793    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:57.735827    2615 handler.go:159] cancel was requested for: 97, needs to be canceled: true
+W0329 11:14:57.738266    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 17 - New completion requested from language client at position {"line":4,"character":55}, triggerKind=1
+I0329 11:14:57.790246    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:57.832392    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:57.832431    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:57.832475    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:57.832489    2615 conversation.go:896] Unable to retrieve excluded files for request #101: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:57.832517    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:57.832525    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:58.090915    2615 completion.go:236] Inline suggestion requested (request #100): {TextDocumentPositionParams:{TextDocument:{URI:file:///home/sandyaa2004/rag_setup.py} Position:{Line:4 Character:55}} TriggerMode:0 IDESessionIndex:20250329_1 CompletionIndex:17}
+Completion Provider - completion # 17 - Completion result obtained from language client
+W0329 11:14:58.237195    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:58.270788    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:58.306698    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 18 - New completion requested from language client at position {"line":4,"character":52}, triggerKind=1
+I0329 11:14:58.353574    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:58.406876    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:58.406916    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:58.406959    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:58.406975    2615 conversation.go:896] Unable to retrieve excluded files for request #107: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:58.407001    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:58.407009    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:58.484547    2615 handler.go:159] cancel was requested for: 106, needs to be canceled: true
+W0329 11:14:58.484924    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 19 - New completion requested from language client at position {"line":4,"character":51}, triggerKind=1
+I0329 11:14:58.523759    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:58.582327    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:58.582373    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:58.582415    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:58.582427    2615 conversation.go:896] Unable to retrieve excluded files for request #110: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:58.582454    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:58.582462    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:58.666078    2615 handler.go:159] cancel was requested for: 109, needs to be canceled: true
+W0329 11:14:58.666431    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 20 - New completion requested from language client at position {"line":4,"character":50}, triggerKind=1
+I0329 11:14:58.702804    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:58.764601    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:58.764648    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:58.764693    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:58.764707    2615 conversation.go:896] Unable to retrieve excluded files for request #113: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:58.764734    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:58.764744    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:59.003915    2615 completion.go:236] Inline suggestion requested (request #112): {TextDocumentPositionParams:{TextDocument:{URI:file:///home/sandyaa2004/rag_setup.py} Position:{Line:4 Character:50}} TriggerMode:0 IDESessionIndex:20250329_1 CompletionIndex:20}
+Completion Provider - completion # 20 - Completion result obtained from language client
+W0329 11:14:59.164032    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:59.199916    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:59.231025    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:59.262197    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:59.294862    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:59.328627    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:59.349497    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:14:59.381959    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 21 - New completion requested from language client at position {"line":4,"character":42}, triggerKind=1
+I0329 11:14:59.425854    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:59.481706    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:59.481756    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:59.481796    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:59.481812    2615 conversation.go:896] Unable to retrieve excluded files for request #124: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:59.481839    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:59.481848    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:59.651062    2615 handler.go:159] cancel was requested for: 123, needs to be canceled: true
+W0329 11:14:59.652680    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 22 - New completion requested from language client at position {"line":4,"character":41}, triggerKind=1
+I0329 11:14:59.691252    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:59.750203    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:59.750250    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:59.750297    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:59.750311    2615 conversation.go:896] Unable to retrieve excluded files for request #128: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:59.750340    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:59.750350    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:59.814568    2615 handler.go:159] cancel was requested for: 127, needs to be canceled: true
+W0329 11:14:59.815307    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 23 - New completion requested from language client at position {"line":4,"character":40}, triggerKind=1
+I0329 11:14:59.852940    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:59.911714    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:14:59.911756    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:14:59.911801    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:14:59.911814    2615 conversation.go:896] Unable to retrieve excluded files for request #131: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:14:59.911842    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:14:59.911851    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:14:59.983584    2615 handler.go:159] cancel was requested for: 130, needs to be canceled: true
+W0329 11:14:59.983809    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 24 - New completion requested from language client at position {"line":4,"character":39}, triggerKind=1
+I0329 11:15:00.022692    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:15:00.082750    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:15:00.082796    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:15:00.082840    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:15:00.082852    2615 conversation.go:896] Unable to retrieve excluded files for request #134: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:15:00.082878    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:15:00.082886    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:15:00.164030    2615 handler.go:159] cancel was requested for: 133, needs to be canceled: true
+W0329 11:15:00.164398    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 25 - New completion requested from language client at position {"line":4,"character":38}, triggerKind=1
+I0329 11:15:00.203535    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:15:00.262783    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:15:00.262824    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:15:00.262869    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:15:00.262883    2615 conversation.go:896] Unable to retrieve excluded files for request #137: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:15:00.262909    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:15:00.262924    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:15:00.465911    2615 handler.go:159] cancel was requested for: 136, needs to be canceled: true
+W0329 11:15:00.467760    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+Completion Provider - completion # 26 - New completion requested from language client at position {"line":4,"character":37}, triggerKind=1
+I0329 11:15:00.497807    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:15:00.563934    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:15:00.563975    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:15:00.564020    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:15:00.564040    2615 conversation.go:896] Unable to retrieve excluded files for request #140: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:15:00.564068    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:15:00.564075    2615 rag_cache.go:1008] rerankByLangBoost=0
+I0329 11:15:00.798266    2615 completion.go:236] Inline suggestion requested (request #139): {TextDocumentPositionParams:{TextDocument:{URI:file:///home/sandyaa2004/rag_setup.py} Position:{Line:4 Character:37}} TriggerMode:0 IDESessionIndex:20250329_1 CompletionIndex:26}
+Completion Provider - completion # 26 - Completion result obtained from language client
+I0329 11:18:46.058707    2615 conversation.go:859] Starting getChatIDEContext with detected intent: 
+I0329 11:18:46.058761    2615 document.go:425] OtherEditType (DELETE), returning ReasonRecentlyEdited
+I0329 11:18:46.058806    2615 ide_context.go:131] Unable to read file at /home/sandyaa2004/.aiexclude
+/home/sandyaa2004
+file:///home/sandyaa2004
+I0329 11:18:46.058821    2615 conversation.go:896] Unable to retrieve excluded files for request #145: open /home/sandyaa2004/.aiexclude: no such file or directory
+I0329 11:18:46.058882    2615 rag_cache.go:973] Retrieving and scoring colocated and open files
+I0329 11:18:46.058893    2615 rag_cache.go:1008] rerankByLangBoost=0
+W0329 11:18:46.912601    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+W0329 11:18:46.917966    2615 tokenizer.go:274] Unknown tokenization algorithm , defaulting to whitespace
+I0329 11:20:46.921198    2615 life_cycle.go:264] codeReportBasicEvery: recomputing codereportbasic metric
